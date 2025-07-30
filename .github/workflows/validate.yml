@@ -1,0 +1,37 @@
+name: Validate Manifests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Scoop
+      run: |
+        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+        iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+        
+    - name: Validate JSON syntax
+      run: |
+        Get-ChildItem -Path "bucket" -Filter "*.json" | ForEach-Object {
+          Write-Host "Validating $($_.Name)"
+          $content = Get-Content $_.FullName -Raw
+          try {
+            $content | ConvertFrom-Json | Out-Null
+            Write-Host "✓ $($_.Name) is valid JSON"
+          } catch {
+            Write-Error "✗ $($_.Name) has invalid JSON: $($_.Exception.Message)"
+            exit 1
+          }
+        }
+        
+    - name: Run manifest validation script
+      run: |
+        .\scripts\validate-manifests.ps1

@@ -1,0 +1,29 @@
+{
+    "version": "1.0.0",
+    "description": "Example application for inhouse tools bucket",
+    "homepage": "https://github.com/your-org/example-app",
+    "license": "MIT",
+    "notes": [
+        "이것은 예제 manifest 파일입니다.",
+        "실제 애플리케이션에 맞게 수정하세요."
+    ],
+    "url": "https://github.com/your-org/example-app/releases/download/v1.0.0/example-app-v1.0.0.zip",
+    "hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "extract_dir": "example-app-v1.0.0",
+    "bin": [
+        "bin/example-app.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin/example-app.exe",
+            "Example App"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/your-org/example-app"
+    },
+    "autoupdate": {
+        "url": "https://github.com/your-org/example-app/releases/download/v$version/example-app-v$version.zip",
+        "extract_dir": "example-app-v$version"
+    }
+}
