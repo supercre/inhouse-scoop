@@ -6,10 +6,10 @@
 
 ```powershell
 # bucket 추가
-scoop bucket add inhouse-tools https://github.com/your-org/inhouse-tools-scoop.git
+scoop bucket add supercre https://github.com/supercre/inhouse-scoop.git
 
 # 패키지 설치
-scoop install inhouse-tools/your-app
+scoop install supercre/your-app
 ```
 
 ## Bucket에 포함된 도구들

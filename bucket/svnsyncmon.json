@@ -1,0 +1,15 @@
+{
+    "version": "0.0.3",
+    "description": "SVN 동기화 스케쥴러 데몬",
+    "url": "https://github.com/supercre/svnsyncmon/releases/download/v0.0.3/SVNSyncMon-v0.0.3-win-x64.zip",
+    "extract_dir": "svnsyncmon",
+    "bin": [
+        "SVNSyncMon.exe"
+    ],
+    "shortcuts": [
+        [
+            "SVNSyncMon.exe",
+            "SVNSyncMon"
+        ]
+    ]
+}
