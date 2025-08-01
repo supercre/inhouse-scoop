@@ -1,8 +1,10 @@
 ﻿{
     "version":  "0.0.4",
     "shortcuts":  [
-                      "SVNSyncMon.exe",
-                      "SVNSyncMon"
+                      [
+                          "SVNSyncMon.exe",
+                          "SVNSyncMon"
+                      ]
                   ],
     "post_install":  [
                          "Write-Host \u0027SVNSyncMon 설치 완료. 필요시 수동으로 시작하세요.\u0027 -ForegroundColor Green"
