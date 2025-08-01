@@ -2,7 +2,6 @@
     "version": "0.0.3",
     "description": "SVN 동기화 스케쥴러 데몬",
     "url": "https://github.com/supercre/svnsyncmon/releases/download/v0.0.3/SVNSyncMon-v0.0.3-win-x64.zip",
-    "extract_dir": "svnsyncmon",
     "notes": [
         "업그레이드 전에 실행 중인 SVNSyncMon 프로세스를 종료해주세요.",
         "또는 'scoop update svnsyncmon' 실행 시 자동으로 종료됩니다."
