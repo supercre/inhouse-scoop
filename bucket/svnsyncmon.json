@@ -12,8 +12,15 @@
     "url":  "https://github.com/supercre/svnsyncmon/releases/download/v0.0.4/SVNSyncMon-v0.0.4-win-x64.zip",
     "description":  "SVN 동기화 스케쥴러 데몬",
     "pre_install":  [
-                        "if (Get-Process SVNSyncMon -ErrorAction SilentlyContinue) { Stop-Process -Name SVNSyncMon -Force }"
+                        "Get-Process SVNSyncMon -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue",
+                        "taskkill /F /IM SVNSyncMon.exe /T 2>$null",
+                        "Start-Sleep -Seconds 2"
                     ],
+    "pre_uninstall":  [
+                          "Get-Process SVNSyncMon -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue",
+                          "taskkill /F /IM SVNSyncMon.exe /T 2>$null",
+                          "Start-Sleep -Seconds 2"
+                      ],
     "notes":  [
                   "업그레이드 전에 실행 중인 SVNSyncMon 프로세스를 종료해주세요.",
                   "또는 \u0027scoop update svnsyncmon\u0027 실행 시 자동으로 종료됩니다."
